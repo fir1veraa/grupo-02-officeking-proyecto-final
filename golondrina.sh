@@ -26,7 +26,7 @@ mostrar () {
 if 
 then
 else
-gsutil du gs://sit-devops-training-bkt11/carpeta-*
+gsutil du gs://sit-devops-training-bkt11/carpeta-* | grep ".txt"
 fi
 }
 
