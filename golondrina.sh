@@ -5,7 +5,7 @@ fecha=$(date "+%A, %B-%d, %Y")
 echo $fecha
 echo ""
 echo ""
-
+#ok
 #nuevo(){
 #gsutil mb -p sit-devops-training -c standard -l us -b on gs://sit-devops-training-bkt$num
 #gsutil label ch -l KEY_1:Grupo:Grupo-02 gs://sit-devops-training-bkt$num
