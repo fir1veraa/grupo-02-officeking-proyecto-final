@@ -8,8 +8,7 @@ echo ""
 #ok
 nuevo(){
 gsutil mb -p sit-devops-training -c standard -l us -b on gs://sit-devops-training-bkt$num
-gsutil label ch -l KEY_1:Grupo:Grupo-02 gs://sit-devops-training-bkt$num
-gsutil label ch -l KEY_2:Proyecto:golondrinas gs://sit-devops-training-bkt$num
+gsutil label ch -l grupo:grupo-02 -l proyecto:golondrinas gs://sit-devops-training-bkt$num
 #gcloud storage buckets describe gs://sit-devops-training-bkt$num --format= "default(uniform_access)"
 } 
 
