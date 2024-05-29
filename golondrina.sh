@@ -6,12 +6,12 @@ echo $fecha
 echo ""
 echo ""
 #ok
-#nuevo(){
-#gsutil mb -p sit-devops-training -c standard -l us -b on gs://sit-devops-training-bkt$num
-#gsutil label ch -l KEY_1:Grupo:Grupo-02 gs://sit-devops-training-bkt$num
-#gsutil label ch -l KEY_2:Proyecto:golondrinas gs://sit-devops-training-bkt$num
+nuevo(){
+gsutil mb -p sit-devops-training -c standard -l us -b on gs://sit-devops-training-bkt$num
+gsutil label ch -l KEY_1:Grupo:Grupo-02 gs://sit-devops-training-bkt$num
+gsutil label ch -l KEY_2:Proyecto:golondrinas gs://sit-devops-training-bkt$num
 #gcloud storage buckets describe gs://sit-devops-training-bkt$num --format= "default(uniform_access)"
-#} 
+} 
 
 copiar () {
  for j in $(seq -w 1 10); 
@@ -23,13 +23,15 @@ copiar () {
 }
 
 mostrar () {
-read -p "¿DESEARIAS VER LOS ARCHIVOS? " decision
+read -p "¿DESEARIAS VER LOS ARCHIVOS?  SI/NO" decision
 des=$(echo "$decision" | tr '[:upper:]' '[:lower:]')
-if [$des="no"];
+if [ $des = "si" ];
 then
-else
 gsutil du gs://sit-devops-training-bkt11/carpeta-* | grep ".txt"
 sleep 15
+else
+        echo "TERMINACION DEL PROGRAMA"
+        read
 fi
 }
 
@@ -52,24 +54,24 @@ whoami
 
 validacion(){
 echo ""
-
+nuevo
 copiar
 mostrar
 log
 log> grupo-02-$fecha.log
-#gsutil ls | grep "sit-devops-training-bkt"
-#        listado=$(gsutil ls | grep "sit-devops-training-bkt$num")
-#if [ "gs://sit-devops-training-bkt$num/" = $listado ]; then
-#if [ -n "$listado" ]; then
-#echo ""
-#echo ""
-# echo "¡¡ El bucket YA EXISTE $listado !!, elige otro"
-    #            echo ""
-               # eliminar
-   #     else
+gsutil ls | grep "sit-devops-training-bkt"
+        listado=$(gsutil ls | grep "sit-devops-training-bkt$num")
+if [ "gs://sit-devops-training-bkt$num/" = $listado ]; then
+if [ -n "$listado" ]; then
+echo ""
+echo ""
+ echo "¡¡ El bucket YA EXISTE $listado !!, elige otro"
+                echo ""
+               eliminar
+       else
                 #nuevo
-  #              echo "Se crea bucket"
- #               fi
+                echo "Se crea bucket"
+                fi
 }
 
 
