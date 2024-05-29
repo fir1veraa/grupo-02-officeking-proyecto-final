@@ -6,25 +6,36 @@ echo $fecha
 echo ""
 echo ""
 
-nuevo(){
-gsutil mb -p sit-devops-training -c standard -l us -b on gs://sit-devops-training-bkt$num
-gsutil label ch -l KEY_1:Grupo:Grupo-02 gs://sit-devops-training-bkt$num
-gsutil label ch -l KEY_2:Proyecto:golondrinas gs://sit-devops-training-bkt$num
-gcloud storage buckets describe gs://sit-devops-training-bkt$num --format= "default(uniform_access)"
-} 
+#nuevo(){
+#gsutil mb -p sit-devops-training -c standard -l us -b on gs://sit-devops-training-bkt$num
+#gsutil label ch -l KEY_1:Grupo:Grupo-02 gs://sit-devops-training-bkt$num
+#gsutil label ch -l KEY_2:Proyecto:golondrinas gs://sit-devops-training-bkt$num
+#gcloud storage buckets describe gs://sit-devops-training-bkt$num --format= "default(uniform_access)"
+#} 
+
+copiar () {
+ for j in $(seq -w 1 2); 
+    do
+      mkdir carpeta-${j}/
+     touch carpeta-${j}/sinceramente.txt
+      gsutil cp -r carpeta-${j}/ gs://sit-devops-training-bkt$num
+    done
+}
+
+
 
 crearc(){
-    funcion=$(gs://sit-devops-training-bkt$num)
+    funcion= "gs://sit-devops-training-bkt$num"
     for j in $(seq -w 1 100); 
     do
-     gsutil cp /dev/null gs://${funcion}/carpeta-${j}/
+     gsutil cp /dev/null ${funcion}/carpeta-${j}/
      touch sinceramente.txt
     done
 }
 
 validacion(){
 echo ""
-crearc
+copiar
 #gsutil ls | grep "sit-devops-training-bkt"
 #        listado=$(gsutil ls | grep "sit-devops-training-bkt$num")
 #if [ "gs://sit-devops-training-bkt$num/" = $listado ]; then
