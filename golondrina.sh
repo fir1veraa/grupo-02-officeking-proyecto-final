@@ -23,10 +23,13 @@ copiar () {
 }
 
 mostrar () {
-if 
+read -p "¿DESEARIAS VER LOS ARCHIVOS? " decision
+des=$(echo "$decision" | tr '[:upper:]' '[:lower:]')
+if [$des="no"];
 then
 else
 gsutil du gs://sit-devops-training-bkt11/carpeta-* | grep ".txt"
+sleep 15
 fi
 }
 
@@ -51,7 +54,7 @@ validacion(){
 echo ""
 
 copiar
-#mostrar
+mostrar
 log
 log> grupo-02-$fecha.log
 #gsutil ls | grep "sit-devops-training-bkt"
