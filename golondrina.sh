@@ -14,7 +14,7 @@ echo ""
 #} 
 
 copiar () {
- for j in $(seq -w 1 2); 
+ for j in $(seq -w 1 10); 
     do
       mkdir carpeta-${j}/
      touch carpeta-${j}/sinceramente.txt
@@ -22,7 +22,13 @@ copiar () {
     done
 }
 
-
+mostrar () {
+if 
+then
+else
+gsutil du gs://sit-devops-training-bkt11/carpeta-*
+fi
+}
 
 crearc(){
     funcion= "gs://sit-devops-training-bkt$num"
@@ -36,6 +42,7 @@ crearc(){
 validacion(){
 echo ""
 copiar
+mostrar
 #gsutil ls | grep "sit-devops-training-bkt"
 #        listado=$(gsutil ls | grep "sit-devops-training-bkt$num")
 #if [ "gs://sit-devops-training-bkt$num/" = $listado ]; then
