@@ -14,24 +14,30 @@ gcloud storage buckets describe gs://sit-devops-training-bkt$num --format= "defa
 } 
 
 crearc(){
-    gsutil cp /dev/null gs://sit-devops-training-bkt10/carpeta-$contador
+    funcion=$(gs://sit-devops-training-bkt$num)
+    for j in $(seq -w 1 100); 
+    do
+     gsutil cp /dev/null gs://${funcion}/carpeta-${j}/
+     touch sinceramente.txt
+    done
 }
 
 validacion(){
 echo ""
-gsutil ls | grep "sit-devops-training-bkt"
-        listado=$(gsutil ls | grep "sit-devops-training-bkt$num")
+crearc
+#gsutil ls | grep "sit-devops-training-bkt"
+#        listado=$(gsutil ls | grep "sit-devops-training-bkt$num")
 #if [ "gs://sit-devops-training-bkt$num/" = $listado ]; then
-if [ -n "$listado" ]; then
-echo ""
-echo ""
-echo "¡¡ El bucket YA EXISTE $listado !!, elige otro"
-                echo ""
-                eliminar
-        else
+#if [ -n "$listado" ]; then
+#echo ""
+#echo ""
+# echo "¡¡ El bucket YA EXISTE $listado !!, elige otro"
+    #            echo ""
+               # eliminar
+   #     else
                 #nuevo
-                echo "Se crea bucket"
-                fi
+  #              echo "Se crea bucket"
+ #               fi
 }
 
 
