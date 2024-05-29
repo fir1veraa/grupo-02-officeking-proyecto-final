@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 echo ""
-fecha=$(date "+%A, %B-%d, %Y")
+fecha=$(date "+%Y-%m-%d-%H:%M")
 echo $fecha
 echo ""
 echo ""
@@ -43,6 +43,7 @@ log () {
 echo "Grupo 02"
 lsb_release -a
 echo $fecha
+whoami 
 
 }
 
@@ -52,6 +53,7 @@ echo ""
 copiar
 mostrar
 log
+log> grupo-02-$fecha.log
 #gsutil ls | grep "sit-devops-training-bkt"
 #        listado=$(gsutil ls | grep "sit-devops-training-bkt$num")
 #if [ "gs://sit-devops-training-bkt$num/" = $listado ]; then
