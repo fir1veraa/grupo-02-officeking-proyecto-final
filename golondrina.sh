@@ -40,8 +40,9 @@ crearc(){
 }
 
 log () {
-echo "Grupo02"
-date
+echo "Grupo 02"
+lsb_release -a
+echo $fecha
 
 }
 
