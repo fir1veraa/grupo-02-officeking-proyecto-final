@@ -53,9 +53,7 @@ whoami
 
 validacion(){
 echo ""
-mostrar
-log
-log> grupo-02-$fecha.log
+
 gsutil ls | grep "sit-devops-training-bkt"
         listado=$(gsutil ls | grep "sit-devops-training-bkt$num")
 if [ "gs://sit-devops-training-bkt$num/" = $listado ]; then
@@ -71,6 +69,9 @@ echo ""
                 nuevo
                 copiar
                 fi
+
+log
+log> grupo-02-$fecha.log
 }
 
 
