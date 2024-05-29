@@ -13,13 +13,13 @@
 
 ## TRABAJO EN EQUIPO OFFICEKING ##
 
-![alt text](Final1.PNG)
+![Final1](https://github.com/fir1veraa/proyecto-final-grupo-02/assets/134978021/7b12b03b-1077-41ab-81e4-d11d37441ed2)
 
-![alt text](Final4.PNG)
+![Final4](https://github.com/fir1veraa/proyecto-final-grupo-02/assets/134978021/5c6ddaf3-244a-4a9e-80fb-c9ec204e21a7)
 
-![alt text](Final3.PNG)
+![Final3](https://github.com/fir1veraa/proyecto-final-grupo-02/assets/134978021/774114db-7359-43ed-a059-6d408a157afc)
 
-![alt text](Final7-1.PNG)
+![Final7](https://github.com/fir1veraa/proyecto-final-grupo-02/assets/134978021/86c8d1ec-4108-4823-b4af-b6dda11636cb)
 _________________________________________________
 
 ## INSTRUCCIONES SCRIPT ##
@@ -57,6 +57,6 @@ crearc()
      touch sinceramente.txt
     done
 
-![alt text](Final6.PNG)
+![Final6](https://github.com/fir1veraa/proyecto-final-grupo-02/assets/134978021/ec438438-e674-4d8e-98da-da9910b7a58e)
 
-![alt text](Final2.PNG)
+![Final2](https://github.com/fir1veraa/proyecto-final-grupo-02/assets/134978021/24a7ab84-4e31-42c3-8d21-aaec57411077)
