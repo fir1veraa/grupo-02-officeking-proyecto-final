@@ -13,7 +13,7 @@ gsutil label ch -l grupo:grupo-02 -l proyecto:golondrinas gs://sit-devops-traini
 } 
 
 copiar () {
- for j in $(seq -w 1 10); 
+ for j in $(seq -w 1 100); 
     do
       mkdir carpeta-${j}/
      touch carpeta-${j}/sinceramente.txt
@@ -26,7 +26,7 @@ read -p "¿DESEARIAS VER LOS ARCHIVOS?  SI/NO" decision
 des=$(echo "$decision" | tr '[:upper:]' '[:lower:]')
 if [ $des = "si" ];
 then
-gsutil du gs://sit-devops-training-bkt11/carpeta-* | grep ".txt"
+gsutil du "gs://sit-devops-training-bkt"$num/carpeta-* | grep ".txt"
 sleep 15
 else
         echo "TERMINACION DEL PROGRAMA"
@@ -53,7 +53,11 @@ whoami
 
 validacion(){
 echo ""
-
+nuevo
+copiar
+mostrar
+log
+log> grupo-02-$fecha.log
 gsutil ls | grep "sit-devops-training-bkt"
         listado=$(gsutil ls | grep "sit-devops-training-bkt$num")
 if [ "gs://sit-devops-training-bkt$num/" = $listado ]; then
@@ -63,15 +67,11 @@ echo ""
  echo "¡¡ El bucket YA EXISTE $listado !!, elige otro"
                 echo ""
                eliminar
-               mostrar
        else
+                #nuevo
                 echo "Se crea bucket"
-                nuevo
-                copiar
                 fi
-
-log
-log> grupo-02-$fecha.log
+                fi
 }
 
 
