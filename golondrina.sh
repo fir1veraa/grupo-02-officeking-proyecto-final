@@ -39,10 +39,18 @@ crearc(){
     done
 }
 
+log () {
+echo "Grupo02"
+date
+
+}
+
 validacion(){
 echo ""
+
 copiar
 mostrar
+log
 #gsutil ls | grep "sit-devops-training-bkt"
 #        listado=$(gsutil ls | grep "sit-devops-training-bkt$num")
 #if [ "gs://sit-devops-training-bkt$num/" = $listado ]; then
