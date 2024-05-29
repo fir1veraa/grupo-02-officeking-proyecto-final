@@ -1,2 +1,2 @@
-# grupo-02-officeking-proyecto-final
+# proyecto-final-grupo-02
 Golondrinas
