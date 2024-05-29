@@ -51,7 +51,7 @@ validacion(){
 echo ""
 
 copiar
-mostrar
+#mostrar
 log
 log> grupo-02-$fecha.log
 #gsutil ls | grep "sit-devops-training-bkt"
