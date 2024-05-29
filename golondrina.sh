@@ -53,8 +53,6 @@ whoami
 
 validacion(){
 echo ""
-nuevo
-copiar
 mostrar
 log
 log> grupo-02-$fecha.log
@@ -67,9 +65,11 @@ echo ""
  echo "¡¡ El bucket YA EXISTE $listado !!, elige otro"
                 echo ""
                eliminar
+               mostrar
        else
-                #nuevo
                 echo "Se crea bucket"
+                nuevo
+                copiar
                 fi
 }
 
