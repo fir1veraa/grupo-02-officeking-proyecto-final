@@ -1,4 +1,5 @@
 #!/bin/bash
+#ver 2.0 con lectura de archivos
 clear
 echo ""
 fecha=$(date "+%Y-%m-%d-%H:%M")
@@ -28,7 +29,34 @@ read -p "¿DESEARIAS VER EL CONTENIDO?  SI/NO?  " decision
 des=$(echo "$decision" | tr '[:upper:]' '[:lower:]')
 if [ $des = "si" ];
 then
-gsutil du "gs://sit-devops-training-bkt"$num/carpeta-* | grep ".txt"
+#gsutil du "gs://sit-devops-training-bkt"$num/carpeta-* | grep ".txt"
+fer="gs://sit-devops-training-bkt51/**/*.txt"
+files=$(gsutil ls $fer 2>/dev/null)
+if [ $? -ne 0 ]; then
+	  echo "Error al listar los archivos en el bucket: $fer"
+	    exit 1
+fi
+
+echo "$files"
+echo ""
+
+for file in $files; do
+	    if gsutil cat "$file" | grep -q .; then
+		    echo ""
+		        echo "Archivo con contenido: $file"
+			    content=$(gsutil cat "$file")
+			    echo ""
+			        echo "-----------MOSTRANDO CONTENIDO------------------------"
+                                echo ""
+                                echo "$content"
+				    echo ""
+                                    echo "-----------SIN MAS QUE MOSTRAR------------------------"
+				    echo ""
+			    		else
+					      #echo "sigo buscando"
+					          echo "Nada por aqui: $file"
+						    fi
+					    done
 else
         echo "TERMINACION DEL PROGRAMA"
 fi
