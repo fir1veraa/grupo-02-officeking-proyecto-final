@@ -30,7 +30,7 @@ des=$(echo "$decision" | tr '[:upper:]' '[:lower:]')
 if [ $des = "si" ];
 then
 #gsutil du "gs://sit-devops-training-bkt"$num/carpeta-* | grep ".txt"
-fer="gs://sit-devops-training-bkt51/**/*.txt"
+fer="gs://sit-devops-training-bkt$num/**/*.txt"
 files=$(gsutil ls $fer 2>/dev/null)
 if [ $? -ne 0 ]; then
 	  echo "Error al listar los archivos en el bucket: $fer"
